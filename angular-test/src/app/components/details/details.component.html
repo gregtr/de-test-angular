@@ -1,0 +1,27 @@
+<div class="table-wrapper">
+    <table>
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Capital</td>
+                <td>Population</td>
+                <td>Currencies</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{countryData.name}}</td>
+                <td>{{countryData.capital}}</td>
+                <td>{{countryData.population}}</td>
+                <td>
+                    <div *ngFor="let currency of countryData.currencies">
+                        {{currency.code}} - {{currency.name}} - {{currency.symbol}}
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="flag-holder">
+        <img [src]="countryData.flag">
+    </div>
+</div>
